@@ -20,3 +20,16 @@ You need to provide your own configuration an naming basically in two files:
 ## Naming convention
 
 In the variables-common.tf there is a variable named "prefix": you need to populate this in order to adapt this configuration to the already deployed [iaas-terraform-azure](https://github.com/tomminux/iaas-terraform-azure) infrastructure. Example: if the prefix is set to "pa-sca", and you executed the  [iaas-terraform-azure](https://github.com/tomminux/iaas-terraform-azure) infrastructure repository, your BIG-IP will be provisioned in the pa-sca-f5secure-vnet and you will need to profice "f5secure" an the value of the "f5bigip_vnet_name" vairable in this repository's terraform.tfvars file. 
+
+## Runnning this Terraform Module
+
+Once you correctly addressed changes in the two files named above, you can provision this with the command
+
+    ./exec.sh [<pip|nopip>]
+    
+where
+
+    "pip" will provision public IPs for mgmt, external selfIP and Virtual Addresses
+    "nopip" will not provision any Pubblic IPs
+    
+**Note**: if you are running this module with "pip", please provde the right number of Public IPs you would like to create in the terraform.tfvars file and change accordly the section related to external SelfIP configuration 
