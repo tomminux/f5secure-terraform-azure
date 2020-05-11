@@ -31,18 +31,21 @@ f5bigip_1_2_ip                  = "10.150.20.12"
 
 f5bigip_int_1_1_ip_configurations = [
     {
+      ## ..:: External SelfIP Configuration ::..
       ipconfig_name    = "01"
       private_ip       = "10.150.10.12"
       is_primary       = true
       public_ip_count  = 0
     },
     {
+      ## ..:: VS1 IP Configuration ::..
       ipconfig_name    = "02"
       private_ip       = "10.150.10.101"
       is_primary       = false
       public_ip_count  = 1
     },
     {
+      ## ..:: VS2 IP Configuration ::..
       ipconfig_name    = "03"
       private_ip       = "10.150.10.102"
       is_primary       = false
