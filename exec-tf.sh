@@ -49,13 +49,7 @@ fi
 terraform init
 terraform plan
 
-read -p "Do you want to actaullt appy this? (Yy for yes)" -n 1 -r
+read -p "Do you want to actaully appy this? (any key to continue, ctlr+c to exit here)" -n 1 -r
 echo    # (optional) move to a new line
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    terraform apply
-else
-    echo "Got it, you just wanted to test it, fair enough! Ciao"
-    exit 0
-fi
 
+terraform apply
