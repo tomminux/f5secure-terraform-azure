@@ -9,7 +9,7 @@ data "local_file" "ssh_key" {
 
 data "template_file" "init_file" {
 
-  template = "${file("${path.module}/scripts/${var.script_name}.tpl")}"
+  template = file("${path.module}/scripts/${var.script_name}.tpl")
   vars = {
 
     do_rpm_file  = var.do_rpm_filename
